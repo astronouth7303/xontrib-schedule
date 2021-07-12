@@ -39,6 +39,8 @@ class Scheduler:
                 nextschedule = _schedule.idle_seconds()
             except Exception:
                 nextschedule = Inf
+            if nextschedule is None:
+                nextschedule = Inf
 
             if nextsched == nextschedule == Inf:
                 self._delay(1)  # Finish init
